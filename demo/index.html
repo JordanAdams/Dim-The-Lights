@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+
+		<title>Dim The Lights Demo</title>
+
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../jquery.dimlights.css">
+
+		<style type="text/css">
+
+			.shadow {
+				box-shadow: 0px 0px 10px #000;
+				-moz-box-shadow: 0px 0px 10px #000;
+			}
+
+			.rounded {
+				border-radius: 10px;
+				-moz-border-radius: 10px;
+			}
+
+		</style>
+
+		<script src="http://code.jquery.com/jquery-1.6.2.js"></script>
+		<script src="../jquery.dimlights.js"></script>
+		<script>
+		
+			$(document).ready(function() {
+				
+				$('#content #kitten1').click(function() {
+
+					$(this).dimTheLights();
+
+				});
+
+
+				$('#content p').click(function() {
+
+					$(this).dimTheLights({
+
+						background : '#fff',
+						opacity : 0.25,
+
+					});
+
+				});
+
+			});
+
+		</script>
+	</head>
+
+	<body>
+
+		<div id="wrapper">
+			<header>Dim The Lights</header>
+
+			<section id="content">
+				<img src="http://placekitten.com/278/100" id="kitten1" />
+
+				<br /><br />
+
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+				<!--<br /><br />
+
+				<img src="http://placekitten.com/g/278/100" id="kitten2" />-->
+			</section>
+
+			<footer>
+				<p>&copy; 2011 &bull; Jordan Adams</p>
+
+				<a href="http://twitter.com/jordancalluma">@JordanCallumA</a>
+			</footer>
+		</div>
+
+	</body>
+</html>
