@@ -21,12 +21,6 @@ Call DTL anywhere using $.notifly()
 
     });
 
-##Example
-
-**[Main example](http://jordan-adams.co.uk/dimthelights)**
-
-Feel free to send me other examples.
-
 ##Settings
 
 **opacity** - How much to darken by. Accepts 0-1 and defaults to 0.75.
