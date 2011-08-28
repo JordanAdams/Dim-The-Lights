@@ -1,4 +1,4 @@
-#Notifly
+#Dim The Lights
 
 Dim The Lights (DTL) is a jQuery plugin which allows you to darken the area around any element. 
 
@@ -13,7 +13,7 @@ Include the CSS and Javascript files in the &lt;head&gt;
 		<script src="jquery.dimlights.js" type="text/javascript"></script>
 	</head>
 
-Call DTL anywhere using $.notifly()
+Call DTL anywhere using $.dimTheLights()
 
     $("#some_elem").click(function() {
 
@@ -25,9 +25,11 @@ Call DTL anywhere using $.notifly()
 
 **opacity** - How much to darken by. Accepts 0-1 and defaults to 0.75.
 
-**background** - The background to apply to the element after. Accepts any CSS valid colour.
+**background** - The background to apply to the element after. Accepts any hex colour code such as #FA7BA7.
 
-**classes** - Any additional classes to apply to the element. Accepts an array of strings such as ['rounded', 'shadow', 'red_border']
+**classes** - Any additional classes to apply to the element. Accepts an array of strings such as ['rounded', 'shadow', 'red_border'].
+
+**softBg** - Adds blur and roundness to the background to achieve a softer feel. Accepts true/flase and defaults to true.
 
 ##Issues & Bugs
 
