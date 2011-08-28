@@ -33,7 +33,7 @@ Call DTL anywhere using $.dimTheLights()
 
 ##Issues & Bugs
 
-Report any issues using one of the following:
+Report any issues or bugs using one of the following:
 
 * Github's issue tracker
 * Twitter: @JordanCallumA
