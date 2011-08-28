@@ -2,18 +2,19 @@
 
 	var defaults = {	
 		opacity : 0.85,
-		// background: '',
 		classes : [],
+		softBg  : true,
+
+		// background: '',
 	}
 
 	var screen_width = $(window).width();
 	var screen_height = $(window).height();
-
 	var o_left;
 	var o_top;
-
 	var clone;
 	var settings;
+
 
 	$.fn.dimTheLights = function(options) {
 		
@@ -66,13 +67,25 @@
 
 		// set clone bg
 		if(settings.background) {
-			clone.css('background', settings.background);
+			clone.css('background-color', settings.background);
+		}
+
+		// apply soft bg if true
+		if(settings.softBg) {
+		
+			clone.css('box-shadow', '0px 0px 10px 5px ' + settings.background);
+			clone.css('-webkit-box-shadow', '0px 0px 10px 5px ' + settings.background);
+			clone.css('-moz-box-shadow', '0px 0px 10px 5px ' + settings.background);
+			clone.css('border-radius', '2px');
+			clone.css('-webkit-border-radius', '2px');
+			clone.css('-moz-border-radius', '2px');
+		
 		}
 
 		// add clone classes
-		/*for(c in settings.classes) {
+		for(c in settings.classes) {
 			clone.addClass(settings.classes[c]);
-		}*/
+		}
 
 	};
 
