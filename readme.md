@@ -29,7 +29,7 @@ Call DTL anywhere using $.dimTheLights()
 
 **classes** - Any additional classes to apply to the element. Accepts an array of strings such as ['rounded', 'shadow', 'red_border'].
 
-**softBg** - Adds blur and roundness to the background to achieve a softer feel. Accepts true/flase and defaults to true.
+**softBg** - Adds blur and roundness to the background to achieve a softer feel. Accepts true/flase and defaults to false.
 
 ##Issues & Bugs
 
