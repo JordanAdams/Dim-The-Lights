@@ -17,8 +17,8 @@
 			}
 
 			.rounded {
-				border-radius: 10px;
-				-moz-border-radius: 10px;
+				border-radius: 50px;
+				-moz-border-radius: 50px;
 			}
 
 		</style>
@@ -42,8 +42,17 @@
 
 						background : '#fff',
 						opacity : 0.5,
+						softBg : true,
 
 					});
+
+				});
+
+				$('#kitten2').click(function() {
+					
+					$(this).dimTheLights({
+						classes : ['shadow', 'rounded']
+					})
 
 				});
 
@@ -68,9 +77,9 @@
 
 				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 
-				<!--<br /><br />
+				<br /><br />
 
-				<img src="http://placekitten.com/g/278/100" id="kitten2" />-->
+				<img src="http://placekitten.com/g/278/50" id="kitten2" />
 			</section>
 
 			<footer>
