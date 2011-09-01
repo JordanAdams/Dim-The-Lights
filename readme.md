@@ -31,6 +31,8 @@ Call DTL anywhere using $.dimTheLights()
 
 **softBg** - Adds blur and roundness to the background to achieve a softer feel. Accepts true/flase and defaults to false.
 
+**closeOnClick** - Closes DimTheLights when the clone is clicked. Accepts true/false and defaults to false.
+
 ##Issues & Bugs
 
 Report any issues or bugs using one of the following:
