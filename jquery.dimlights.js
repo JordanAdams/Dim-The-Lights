@@ -1,10 +1,11 @@
 (function($) {
 
 	var defaults = {	
-		opacity    : 0.85,
-		classes    : [],
-		softBg     : false,
-		hideTarget : true,
+		opacity    		: 0.85,
+		classes    		: [],
+		softBg     		: false,
+		hideTarget 		: true,
+		closeOnClick	: false,
 
 		// background: '',
 	}
@@ -17,10 +18,14 @@
 	var settings;
 	var target;
 
-	$.fn.dimTheLights = function(options) {
+	$.fn.dimTheLights = function(argument) {
 		
 		// merge options into settings
-		settings = $.extend({}, defaults, options);
+		if (!argument) {
+			settings = $.extend({}, defaults);
+		} else if (typeof(argument)) {
+			settings = $.extend({}, defaults, argument);
+		}
 
 		// reference target (jquery fucks with 'this')
 		target = this;
@@ -56,7 +61,7 @@
 		// position clone
 		clone.css('top', o_top);
 		clone.css('left', o_left);
-		clone.addClass('dtl_target');
+		clone.addClass('dtl_clone');
 
 		// set clone dimensions
 		var t_width = this.width();
@@ -88,9 +93,22 @@
 		}
 
 		// hide target?
-		settings.hideTarget ? target.css('visibility', 'hidden') : false;
+		/* REMOVED FOR NOW -- settings.hideTarget ? target.css('visibility', 'hidden') : false; */
 
-		// Bind 'close on click' to overlay
+
+		/** EVENTS **/
+
+		if (settings.closeOnClick) {
+			$('.dtl_clone').click(function() {
+				
+				$('#dtl_overlay').fadeOut(200, function() {
+					$(this).detach();
+					clone.remove();
+				});
+
+			});
+		}
+
 		$('#dtl_overlay').live('click', function() {
 			
 			$(this).fadeOut(200, function() {
@@ -100,7 +118,6 @@
 
 		});
 
-		// Keep overlay size correct
 		$(window).bind('resize', function() {
 
 			screen_width = $(window).width();
