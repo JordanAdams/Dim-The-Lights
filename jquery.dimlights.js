@@ -47,9 +47,14 @@
 
 			settings = $.extend({}, defaults, argument);
 
+		} else if (argument === 'destroy') {
+			
+			methods.destroy();
+			alert('testing');
+
 		} else {
 			
-			console.error()
+			console.error(argument + 'is not a valid argument for dimTheLights()');
 
 		}
 
@@ -60,6 +65,9 @@
 		$('body').append('<div id="dtl_overlay"></div>');
 
 		// resize overlay
+		screen_width = $(window).width();
+		screen_height = $(window).height();
+		
 		$('#dtl_overlay').width(screen_width);
 		$('#dtl_overlay').height(screen_height);
 
@@ -70,24 +78,17 @@
 		o_left = this.offset().left;
 		o_top = this.offset().top;
 
-		$(window).bind('resize', function() {
-			
-			o_left = target.offset().left;
-			o_top = target.offset().top;
-			
-			clone.css('top', o_top);
-			clone.css('left', o_left);		
-
-		});
-
 		// clone the target element
 		clone = this.clone();
 		clone.appendTo('body');
+		clone.addClass('dtl_clone');
 
 		// position clone
+		o_left = target.offset().left;
+		o_top = target.offset().top;
+
 		clone.css('top', o_top);
 		clone.css('left', o_left);
-		clone.addClass('dtl_clone');
 
 		// set clone dimensions
 		var t_width = this.width();
@@ -123,7 +124,6 @@
 
 
 		/** EVENTS **/
-
 		if (settings.closeOnClick) {
 
 			$('.dtl_clone').click(function() {	
@@ -140,9 +140,13 @@
 
 			screen_width = $(window).width();
 			screen_height = $(window).height();
-
 			$('#dtl_overlay').width(screen_width);
 			$('#dtl_overlay').height(screen_height);
+
+			o_left = target.offset().left;
+			o_top = target.offset().top;
+			clone.css('top', o_top);
+			clone.css('left', o_left);
 
 		});
 
