@@ -10,16 +10,15 @@
 		<link rel="stylesheet" href="../jquery.dimlights.css">
 
 		<style type="text/css">
-
 			.shadow {
-				box-shadow: 0px 0px 10px #000;
-				-moz-box-shadow: 0px 0px 10px #000;
+				box-shadow: 0px 0px 10px 2px #000;
+				-moz-box-shadow: 0px 0px 10px 2px #000;
 			}
 
-			.black_border {
-				border: solid 1px #000;
+			.rounded {
+				border-radius: 100px;
+				-moz-border-radius: 100px;
 			}
-
 		</style>
 
 		<script src="http://code.jquery.com/jquery-1.6.2.js"></script>
@@ -28,30 +27,31 @@
 		
 			$(document).ready(function() {
 				
-				$('#content #kitten1').click(function() {
+				// Standard
+				$('#demo_standard').click(function() {
 
 					$(this).dimTheLights();
 
 				});
 
-
-				$('#content p').click(function() {
+				// Background
+				$('#demo_background').click(function() {
 
 					$(this).dimTheLights({
 
 						background : '#fff',
-						opacity : 0.5,
 						softBg : true,
 
 					});
 
 				});
 
-				$('#kitten2').click(function() {
+				// Classes
+				$('#demo_classes').click(function() {
 					
 					$(this).dimTheLights({
 						closeOnClick : true,
-						classes : ['shadow', 'black_border']
+						classes : ['shadow', 'rounded']
 					})
 
 				});
@@ -67,19 +67,21 @@
 			<header>Dim The Lights</header>
 
 			<section id="content">
-				<b>Click the image or paragraph below...</b>
+				<b>Click the images or paragraph below...</b>
 
 				<br /><br />
 
-				<img src="http://placekitten.com/278/100" id="kitten1" />
+				<article>
+					<img src="http://placekitten.com/278/100" id="demo_standard" />
+				</article>
 
-				<br /><br />
+				<article>
+					<p id="demo_background">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+				</article>
 
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-
-				<br /><br />
-
-				<img src="http://placekitten.com/g/278/50" id="kitten2" />
+				<article>
+					<img src="http://placekitten.com/g/278/50" id="demo_classes" />
+				</article>
 			</section>
 
 			<footer>

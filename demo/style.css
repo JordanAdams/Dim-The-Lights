@@ -22,6 +22,14 @@ header {
 	padding: 10px;
 }
 
+#content article {
+	margin-bottom: 20px;
+}
+
+#content article:last-of-type {
+	margin: 0px;
+}
+
 footer {
 	font-size: 80%;
 	color: #444;
