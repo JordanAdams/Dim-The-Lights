@@ -33,6 +33,8 @@ Call DTL anywhere using $.dimTheLights()
 
 **closeOnClick** - Closes DimTheLights when the clone is clicked. Accepts true/false and defaults to false.
 
+**hideTarget** - Specifies wether or not to hide the target element. Accepts true/false and defaults to true.
+
 ##Issues & Bugs
 
 Report any issues or bugs using one of the following:
