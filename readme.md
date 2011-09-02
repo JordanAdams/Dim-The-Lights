@@ -7,10 +7,10 @@ Dim The Lights (DTL) is a jQuery plugin which allows you to darken the area arou
 Include the CSS and Javascript files in the &lt;head&gt;
 
 	<head>
-		<link href="jquery.dimlights.css" type="text/css" rel="stylesheet" />
+		<link href="jquery.dimlights.min.css" type="text/css" rel="stylesheet" />
 
 		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-		<script src="jquery.dimlights.js" type="text/javascript"></script>
+		<script src="jquery.dimlights.min.js" type="text/javascript"></script>
 	</head>
 
 Call DTL anywhere using $.dimTheLights()
