@@ -123,6 +123,7 @@
 
 
 		/** EVENTS **/
+
 		if (settings.closeOnClick) {
 
 			$('.dtl_clone').click(function() {	
