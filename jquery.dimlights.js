@@ -1,7 +1,17 @@
 (function($) {
 
-	var screen_width = $(window).width();
-	var screen_height = $(window).height();
+	if ($(window).height() > $('html').height()) {
+		var screen_height = $(window).height();
+	} else {
+		var screen_height = $('html').height();
+	}
+
+	if ($(window).width() > $('html').width()) {
+		screen_width = $(window).width();
+	} else {
+		screen_width = $('html').width();
+	}
+
 	var o_left;
 	var o_top;
 	var clone;
@@ -27,6 +37,25 @@
 				clone.remove();
 
 			});
+
+		},
+
+		resize_overlay : function() {
+
+			if ($(window).height() > $('html').height()) {
+				screen_height = $(window).height();
+			} else {
+				screen_height = $('html').height();
+			}
+			
+			if ($(window).width() > $('html').width()) {
+				screen_width = $(window).width();
+			} else {
+				screen_width = $('html').width();
+			}
+			
+			$('#dtl_overlay').width(screen_width);
+			$('#dtl_overlay').height(screen_height);
 
 		}
 
@@ -65,11 +94,7 @@
 		$('body').append('<div id="dtl_overlay"></div>');
 
 		// resize overlay
-		screen_width = $(window).width();
-		screen_height = $(window).height();
-		
-		$('#dtl_overlay').width(screen_width);
-		$('#dtl_overlay').height(screen_height);
+		methods.resize_overlay();
 
 		// fade in overlay
 		$('#dtl_overlay').fadeTo(200, settings.opacity);
@@ -138,10 +163,7 @@
 
 		$(window).bind('resize', function() {
 
-			screen_width = $(window).width();
-			screen_height = $(window).height();
-			$('#dtl_overlay').width(screen_width);
-			$('#dtl_overlay').height(screen_height);
+			methods.resize_overlay();
 
 			o_left = target.offset().left;
 			o_top = target.offset().top;
