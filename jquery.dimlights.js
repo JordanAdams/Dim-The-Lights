@@ -1,7 +1,7 @@
 (function($) {
 
-	var screen_width = $(window).width();
-	var screen_height = $(window).height();
+	var screen_width = $('html').width();
+	var screen_height = $('html').height();
 	var o_left;
 	var o_top;
 	var clone;
@@ -65,8 +65,8 @@
 		$('body').append('<div id="dtl_overlay"></div>');
 
 		// resize overlay
-		screen_width = $(window).width();
-		screen_height = $(window).height();
+		screen_width = $('html').width();
+		screen_height = $('html').height();
 		
 		$('#dtl_overlay').width(screen_width);
 		$('#dtl_overlay').height(screen_height);
@@ -138,8 +138,8 @@
 
 		$(window).bind('resize', function() {
 
-			screen_width = $(window).width();
-			screen_height = $(window).height();
+			screen_width = $('html').width();
+			screen_height = $('html').height();
 			$('#dtl_overlay').width(screen_width);
 			$('#dtl_overlay').height(screen_height);
 
