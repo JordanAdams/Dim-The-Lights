@@ -1,15 +1,5 @@
 (function($) {
 
-	var defaults = {	
-		opacity    		: 0.85,
-		classes    		: [],
-		softBg     		: false,
-		hideTarget 		: true,
-		closeOnClick	: false,
-
-		// background: '',
-	}
-
 	var screen_width = $(window).width();
 	var screen_height = $(window).height();
 	var o_left;
@@ -18,13 +8,49 @@
 	var settings;
 	var target;
 
+	var defaults = {	
+		opacity    		: 0.85,
+		classes    		: [],
+		softBg     		: false,
+		hideTarget 		: true,
+		closeOnClick	: false,
+	};
+
+	var methods = {
+		
+		destroy	: function() {
+			
+			$('#dtl_overlay').fadeOut(200, function() {
+
+				target.css('visibility', 'visible');
+				$(this).detach();
+				clone.remove();
+
+			});
+
+		}
+
+	};
+
+
+	/*******************/
+	/** MAIN FUNCTION **/
+	/*******************/
 	$.fn.dimTheLights = function(argument) {
 		
-		// merge options into settings
+		// handle argument
 		if (!argument) {
+
 			settings = $.extend({}, defaults);
+
 		} else if (typeof(argument)) {
+
 			settings = $.extend({}, defaults, argument);
+
+		} else {
+			
+			console.error()
+
 		}
 
 		// reference target (jquery fucks with 'this')
@@ -81,9 +107,9 @@
 			clone.css('box-shadow', '0px 0px 10px 5px ' + settings.background);
 			clone.css('-webkit-box-shadow', '0px 0px 10px 5px ' + settings.background);
 			clone.css('-moz-box-shadow', '0px 0px 10px 5px ' + settings.background);
-			clone.css('border-radius', '2px');
-			clone.css('-webkit-border-radius', '2px');
-			clone.css('-moz-border-radius', '2px');
+			clone.css('border-radius', '3px');
+			clone.css('-webkit-border-radius', '3px');
+			clone.css('-moz-border-radius', '3px');
 		
 		}
 
@@ -93,29 +119,21 @@
 		}
 
 		// hide target?
-		/* REMOVED FOR NOW -- settings.hideTarget ? target.css('visibility', 'hidden') : false; */
+		settings.hideTarget ? target.css('visibility', 'hidden') : false;
 
 
 		/** EVENTS **/
 
 		if (settings.closeOnClick) {
-			$('.dtl_clone').click(function() {
-				
-				$('#dtl_overlay').fadeOut(200, function() {
-					$(this).detach();
-					clone.remove();
-				});
 
+			$('.dtl_clone').click(function() {	
+				methods.destroy();
 			});
+
 		}
 
-		$('#dtl_overlay').live('click', function() {
-			
-			$(this).fadeOut(200, function() {
-				$(this).detach();
-				clone.detach();
-			});
-
+		$('#dtl_overlay').live('click', function() {	
+			methods.destroy();
 		});
 
 		$(window).bind('resize', function() {
