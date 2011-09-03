@@ -1,0 +1,47 @@
+body {
+	background: #eee;
+	color: #222;
+	font: 10pt arial, sans-serif;
+}
+
+#wrapper {
+	width: 300px;
+	margin: 50px auto;
+}
+
+header {
+	font-weight: bold;
+	font-size: 140%;
+	margin-bottom: 10px;
+	color: #555;
+}
+
+#content {
+	background: #fff;
+	border: solid 1px #aaa;
+	padding: 10px;
+}
+
+#content article {
+	margin-bottom: 20px;
+}
+
+#content article:last-of-type {
+	margin: 0px;
+}
+
+footer {
+	font-size: 80%;
+	color: #444;
+	text-align: center;
+	margin-top: 10px;
+}
+
+footer a {
+	color: #222;
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
